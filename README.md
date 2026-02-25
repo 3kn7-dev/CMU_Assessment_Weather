@@ -97,6 +97,7 @@ Use Live Server extension.
 - Add unit tests
 - Improve accessibility attributes
 - Deploy to a live hosting platform
+- Integrate with Weather API 
 
 ## Notes
 
