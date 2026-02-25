@@ -1,4 +1,4 @@
-const API_URL = "https://restcountries.com/v3.1/all?fields=name,region,capital,population,flags,languages,currencies";
+const API_URL = "https://restcountries.com/v3.1/all?fields=name,region,capital,population,flags,languages,currencies,subregion";
 
 const countryListEl = document.getElementById("countryList");
 const detailsContentEl = document.getElementById("detailsContent");
@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
   searchInputEl.addEventListener("input", handleSearch);
 });
 
-// Fetch countries
 async function fetchCountries() {
   showLoading(true);
   hideError();
@@ -62,7 +61,7 @@ function renderCountryList(countryArray) {
       <img src="${country.flags.svg}" alt="Flag">
       <div>
         <strong>${country.name.common}</strong><br>
-        <small>${country.region}</small>
+        <small>${country.region}, ${country.subregion}</small>
       </div>
     `;
 
@@ -93,6 +92,7 @@ function renderDetails(country) {
     <p><strong>Capital:</strong> ${country.capital ? country.capital[0] : "N/A"}</p>
     <p><strong>Population:</strong> ${country.population.toLocaleString()}</p>
     <p><strong>Region:</strong> ${country.region}</p>
+    <p><strong>Subregion:</strong> ${country.subregion}</p>
     <p><strong>Languages:</strong> ${languages}</p>
     <p><strong>Currencies:</strong> ${currencies}</p>
   `;
@@ -100,12 +100,12 @@ function renderDetails(country) {
 
 // Render chart
 function renderChart(selectedCountry) {
-  const sameRegion = countries.filter(
-    c => c.region === selectedCountry.region
+  const samesSubRegion = countries.filter(
+    c => c.subregion === selectedCountry.subregion
   ).slice(0, 5);
 
-  const labels = sameRegion.map(c => c.name.common);
-  const populations = sameRegion.map(c => c.population);
+  const labels = samesSubRegion.map(c => c.name.common);
+  const populations = samesSubRegion.map(c => c.population);
 
   if (populationChart) {
     populationChart.destroy();
