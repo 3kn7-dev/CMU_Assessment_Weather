@@ -95,7 +95,6 @@ Use Live Server extension.
 - Add sorting options
 - Improve chart comparison logic
 - Add unit tests
-- Improve accessibility attributes
 - Integrate with Weather API 
 
 ## Notes
