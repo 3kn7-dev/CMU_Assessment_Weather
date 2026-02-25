@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>REST Countries Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <header class="header">
+    <h1>REST Countries Dashboard</h1>
+    <input 
+      type="text" 
+      id="searchInput" 
+      placeholder="Search countries..."
+    />
+  </header>
+
+  <main class="container">
+
+    <aside class="sidebar">
+      <div id="loading" class="message">Loading countries...</div>
+      <div id="error" class="message error hidden">
+        Failed to load data. Please try again.
+      </div>
+      <ul id="countryList" class="country-list"></ul>
+    </aside>
+
+    <section class="details">
+      <div id="detailsContent" class="details-content">
+        <p>Select a country to view details.</p>
+      </div>
+      <canvas id="populationChart"></canvas>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
