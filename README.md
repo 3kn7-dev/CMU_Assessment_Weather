@@ -94,8 +94,6 @@ Use Live Server extension.
 - Add region dropdown filtering
 - Add sorting options
 - Improve chart comparison logic
-- Add unit tests
-- Integrate with Weather API 
 
 ## Notes
 
