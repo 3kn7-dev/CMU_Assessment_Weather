@@ -1,4 +1,4 @@
-# CMU_Assessment_Weather
+# CMU_Assessment_Countries
 
 A responsive web dashboard that consumes live country data from the REST Countries API and presents it in an interactive, user-friendly layout.
 
